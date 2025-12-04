@@ -1,5 +1,5 @@
 # EspSqliteTest
-Esp32 Sqlite3 Test App
+Esp32 Sqlite3 Test App using SD card.
 
 ### Setup
 ```
