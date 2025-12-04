@@ -1,0 +1,3 @@
+[submodule "components/esp32-idf-sqlite3"]
+	path = components/esp32-idf-sqlite3
+	url = git@github.com:navisinghnz9/esp32-idf-sqlite3.git
