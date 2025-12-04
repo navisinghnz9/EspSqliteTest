@@ -4,8 +4,6 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include <stdio.h>
-//#include "esp_heap_caps.h"
-
 
 static const char* TAG = "[ESP-SQLITE-TEST]";
 

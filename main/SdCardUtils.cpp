@@ -17,7 +17,9 @@ esp_err_t SdCardUtils::mountSPI(
 {
     ESP_LOGI(TAG, "Mounting SPI SD card at %s", mountPoint);
 
-    // 1️⃣ Initialize SPI host
+    //----------------------------------------
+    // Initialize SPI host
+    //----------------------------------------
     sdmmc_host_t host = SDSPI_HOST_DEFAULT();
     spi_bus_config_t bus_cfg = {};
     bus_cfg.mosi_io_num = mosi;
@@ -32,12 +34,16 @@ esp_err_t SdCardUtils::mountSPI(
         return ret;
     }
 
-    // 2️⃣ Configure SD SPI device
+    //----------------------------------------
+    // Configure SD SPI device
+    //----------------------------------------
     sdspi_device_config_t slot_config = SDSPI_DEVICE_CONFIG_DEFAULT();
     slot_config.gpio_cs = (gpio_num_t)cs;
     slot_config.host_id = (spi_host_device_t)host.slot;
 
-    // 3️⃣ Mount FATFS
+    //----------------------------------------
+    // Mount FATFS
+    //----------------------------------------
     esp_vfs_fat_sdmmc_mount_config_t mount_config = {};
     mount_config.format_if_mount_failed = false;
     mount_config.max_files = 5;
